@@ -6,4 +6,5 @@ WORKDIR /hackernews
 COPY requirements.txt /hackernews/
 RUN pip install -r requirements.txt
 COPY . /hackernews/
-CMD python manage.py runserver --settings=settings.production 0.0.0.0:8080
+ENV DJANGO_SETTINGS_MODULE=nasa.settings
+CMD python manage.py runserver --settings=settings.production 0.0.0.0:8080.
